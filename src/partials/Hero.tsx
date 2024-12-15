@@ -10,20 +10,15 @@ const Hero = () => (
     <HeroAvatar
       title={
         <>
-          Hi there, I'm <GradientText>Ixartz</GradientText> 👋
+          你好, 我是 <GradientText>李诺</GradientText> 👋
         </>
       }
       description={
         <>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            malesuada
-          </a>{' '}
-          nisi tellus, non imperdiet nisi tempor at. Lorem ipsum dolor sit amet,{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            consectetur
-          </a>{' '}
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          一个资深的前端工程师, 喜欢研究新技术,
+          喜欢分享技术，在前端行业摸爬滚打近十年了。爱折腾。目前在深圳{' '}
+          <a className="text-cyan-400 hover:underline" href="/"></a>{' '}
+          欢迎来到我的个人博客
         </>
       }
       avatar={
