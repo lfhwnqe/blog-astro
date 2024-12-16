@@ -1,7 +1,7 @@
 ---
 layout: '@/templates/BasePost.astro'
 title: 闭包、访问器、工厂模式等
-description: javascript中的闭包、访问器、工厂模式、构造函数模式、原型模式、动态原型模式.
+description: javascript中的闭包、访问器、工厂模式等.
 pubDate: 2018-12-11T00:00:00Z
 imgSrc: '/assets/images/image-post3.jpeg'
 imgAlt: 'Image post 2'
