@@ -10,7 +10,8 @@
     "clean": "rimraf dist",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro .",
     "build-types": "tsc --noEmit --pretty",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "npx playwright install chromium"
   },
   "devDependencies": {
     "@astrojs/react": "^3.0.7",
@@ -48,13 +49,13 @@
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.3.6"
   },
-  "playwright": "^1.49.1",
   "dependencies": {
     "astro-boilerplate-components": "^1.0.16",
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remark-mermaidjs": "^7.0.0"
+    "remark-mermaidjs": "^7.0.0",
+    "playwright": "^1.49.1"
   },
   "volta": {
     "node": "16.15.1"
