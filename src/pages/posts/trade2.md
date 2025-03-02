@@ -2,8 +2,8 @@
 layout: "@/templates/BasePost.astro"
 title: 订单流分析
 description: 订单流分析
-pubDate: 2025-02-21T00:00:00Z
-imgSrc: "/assets/images/image-post7.jpeg"
+pubDate: 2025-02-22T00:00:00Z
+imgSrc: "/assets/images/image-post4.jpeg"
 imgAlt: "Image post 2"
 ---
 

@@ -2,8 +2,8 @@
 layout: "@/templates/BasePost.astro"
 title: 威科夫实践
 description: 威科夫实践计划
-pubDate: 2025-02-25T00:00:00Z
-imgSrc: "/assets/images/image-post7.jpeg"
+pubDate: 2025-03-01T00:00:00Z
+imgSrc: "/assets/images/image-post6.jpeg"
 imgAlt: "Image post 2"
 ---
 # 威科夫实践计划

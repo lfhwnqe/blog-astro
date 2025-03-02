@@ -3,7 +3,7 @@ layout: "@/templates/BasePost.astro"
 title: 威科夫理论
 description: 威科夫理论
 pubDate: 2025-02-25T00:00:00Z
-imgSrc: "/assets/images/image-post7.jpeg"
+imgSrc: "/assets/images/image-post3.jpeg"
 imgAlt: "Image post 2"
 ---
 
