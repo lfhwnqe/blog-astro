@@ -4,7 +4,7 @@ title: 行情分析
 description: 行情分析
 pubDate: 2025-03-02T00:00:00Z
 imgSrc: "https://nuo-english.s3.us-east-2.amazonaws.com/trading/2503022000/tradingview2.jpg"
-imgAlt: "Image post 3"
+imgAlt: "Image post 4"
 ---
 # 行情分析
 ## 背景分析
@@ -24,7 +24,8 @@ imgAlt: "Image post 3"
 打开后续行情。继续下跌并走下方大单合约处
 ![结构分析](https://nuo-english.s3.us-east-2.amazonaws.com/trading/2503022000/hyblock2.jpg)
 由于下方还有大单合约，且行情正在区间震荡向下阶段。判断价格会继续下跌,下方还有大量多单
-
+## 数据回测
+由于晚上10。30左右，特朗普发布加密货币利好消息。加密货币市场开始爆拉，本次回弹变成了暴涨
 
 
 
