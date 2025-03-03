@@ -16,6 +16,26 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <Project
+        name="web3大学"
+        description={`web3大学，基于以太坊的大学`}
+        link="https://web3.maomaocong.site/en/web3"
+        img={{
+          src: '/assets/images/project-web-design.png',
+          alt: 'Project Web Design',
+        }}
+        category={
+          <>
+            <Tags color={ColorTags.FUCHSIA}>Next.js</Tags>
+            <Tags color={ColorTags.SKY}>Atomic State</Tags>
+            <Tags color={ColorTags.LIME}>Aws serverless</Tags>
+            <Tags color={ColorTags.SKY}>dynamodb</Tags>
+            <Tags color={ColorTags.ROSE}>TypeScript</Tags>
+            <Tags color={ColorTags.LIME}>etherjs</Tags>
+            <Tags color={ColorTags.ROSE}>Nginx</Tags>
+          </>
+        }
+      />
+      {/* <Project
         name="顺丰科技门户应用"
         description={`负责前后端不分离巨石java应用（1000+页面）=> 前后端分离（100天极限重构）
         => 微前端架构（分领域开发）`}
@@ -35,8 +55,8 @@ const ProjectList = () => (
             <Tags color={ColorTags.ROSE}>Nginx</Tags>
           </>
         }
-      />
-      <Project
+      /> */}
+      {/* <Project
         name="前端基建"
         description={`提炼基础业务工具链(实现业务组件+hooks+cli) => 推进全领域统一工具链(风险掌控，准时切换) `}
         link="/"
@@ -108,7 +128,7 @@ const ProjectList = () => (
             <Tags color={ColorTags.SKY}>Split Chunk</Tags>
           </>
         }
-      />
+      /> */}
     </div>
   </Section>
 );
