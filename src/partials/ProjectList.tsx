@@ -20,7 +20,7 @@ const ProjectList = () => (
         description={`web3大学，基于以太坊的大学`}
         link="https://web3.maomaocong.site/en/web3"
         img={{
-          src: '/assets/images/project-web-design.png',
+          src: '/assets/images/web3.jpg',
           alt: 'Project Web Design',
         }}
         category={
@@ -31,7 +31,6 @@ const ProjectList = () => (
             <Tags color={ColorTags.SKY}>dynamodb</Tags>
             <Tags color={ColorTags.ROSE}>TypeScript</Tags>
             <Tags color={ColorTags.LIME}>etherjs</Tags>
-            <Tags color={ColorTags.ROSE}>Nginx</Tags>
           </>
         }
       />
