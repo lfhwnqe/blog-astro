@@ -2,14 +2,14 @@
 layout: "@/templates/BasePost.astro"
 title: 2025-3-5行情分析
 description: 基于威科夫理论的行情分析
-pubDate: 2025-03-05T00:00:00Z
+pubDate: 2025-03-05T07:00:00Z
 imgSrc: "https://nuo-english.s3.us-east-2.amazonaws.com/trading/250305/tradingview4h.jpg"
 imgAlt: "Image post 4"
 ---
 
 # 早间行情分析
 
-2025-3-4 早上行情分析 6:00-7:20 点
+2025-3-5 早上行情分析 6:00-7:20 点
 
 ## A. 市场新闻与基本面扫描
 
