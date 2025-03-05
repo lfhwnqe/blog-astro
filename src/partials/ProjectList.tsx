@@ -37,7 +37,7 @@ const ProjectList = () => (
       />
       <Project
         name="solidity合约"
-        description={`基于以太坊的erc20 + erc721 + 课程购买合约`}
+        description={`基于以太坊的erc20 + erc721 + 视频课程合约`}
         link="https://sepolia.etherscan.io/address/0x2738704a2A91f2C2724422540f7991Ed0D144b75#code"
         img={{
           src: '/assets/images/contract.jpg',
