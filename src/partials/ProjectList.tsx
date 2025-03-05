@@ -31,6 +31,25 @@ const ProjectList = () => (
             <Tags color={ColorTags.SKY}>dynamodb</Tags>
             <Tags color={ColorTags.ROSE}>TypeScript</Tags>
             <Tags color={ColorTags.LIME}>etherjs</Tags>
+            <Tags color={ColorTags.CYAN}>metamask</Tags>
+          </>
+        }
+      />
+      <Project
+        name="solidity合约"
+        description={`基于以太坊的erc20 + erc721 + 课程购买合约`}
+        link="https://sepolia.etherscan.io/address/0x2738704a2A91f2C2724422540f7991Ed0D144b75#code"
+        img={{
+          src: '/assets/images/contract.jpg',
+          alt: 'Project Web Design',
+        }}
+        category={
+          <>
+            <Tags color={ColorTags.FUCHSIA}>solidity</Tags>
+            <Tags color={ColorTags.SKY}>hardhat</Tags>
+            <Tags color={ColorTags.CYAN}>NFT</Tags>
+            <Tags color={ColorTags.VIOLET}>ERC20</Tags>
+            <Tags color={ColorTags.GRAY}>Contract OpenSource EtherScan</Tags>
           </>
         }
       />
