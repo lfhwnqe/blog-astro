@@ -1,0 +1,48 @@
+---
+import { GradientText, Section } from 'astro-boilerplate-components';
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+
+const title = `感谢您的留言 - ${AppConfig.site_name}`;
+const description = '感谢您的留言，我们会尽快回复您。';
+---
+
+<Base head={{ title, description }}>
+  <Section>
+    <div class="flex flex-col items-center justify-center py-16 text-center">
+      <div class="mb-8">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="mx-auto h-24 w-24 text-cyan-400" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
+          />
+        </svg>
+      </div>
+      
+      <h1 class="text-4xl font-bold">
+        <GradientText>感谢您的留言</GradientText>
+      </h1>
+      
+      <p class="mt-6 max-w-xl text-xl text-gray-300">
+        我已收到您的留言，会尽快查看并回复。感谢您的反馈和支持！
+      </p>
+      
+      <div class="mt-12">
+        <a 
+          href="/" 
+          class="rounded-md bg-gradient-to-br from-sky-500 to-cyan-400 px-6 py-3 text-center font-medium text-white shadow-lg shadow-cyan-500/20 transition-all hover:from-sky-600 hover:to-cyan-500 hover:shadow-cyan-500/30 focus:outline-none focus:ring-2 focus:ring-cyan-600/50"
+        >
+          返回首页
+        </a>
+      </div>
+    </div>
+  </Section>
+</Base> 
