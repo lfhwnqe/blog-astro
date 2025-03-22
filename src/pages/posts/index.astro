@@ -1,0 +1,71 @@
+---
+import type { IFrontmatter } from 'astro-boilerplate-components';
+import {
+  Section,
+  PaginationHeader,
+  BlogGallery,
+} from 'astro-boilerplate-components';
+
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+import { sortByDate } from '@/utils/Posts';
+
+const geekPosts = await Astro.glob<IFrontmatter>('./geek/**/*.md');
+const tradePosts = await Astro.glob<IFrontmatter>('./trade/**/*.md');
+
+const sortedGeekPosts = sortByDate(geekPosts).slice(0, 3);
+const sortedTradePosts = sortByDate(tradePosts).slice(0, 3);
+
+const title = `博客文章 - ${AppConfig.site_name}`;
+const description = '技术日记与交易日记';
+---
+
+<Base head={{ title, description }}>
+  <Section>
+    <PaginationHeader title='Blogs' description='技术与交易日记' />
+  </Section>
+
+  <Section>
+    <div class="space-y-16">
+      <div>
+        <div class="mb-8 flex items-center justify-between">
+          <h2 class="text-2xl font-bold">
+            <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">
+              技术日记
+            </span>
+          </h2>
+          <a 
+            href="/posts/geek/" 
+            class="group relative mt-4 rounded-md bg-slate-700/70 px-6 py-2.5 text-base font-medium text-white shadow-lg transition-all hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-500/50"
+          >
+            查看更多
+            <span class="absolute -right-1 top-1/2 ml-2 -translate-y-1/2 transform opacity-0 transition-all group-hover:right-2 group-hover:opacity-100">→</span>
+          </a>
+        </div>
+        <div class="rounded-lg bg-slate-800/50 p-8">
+          <BlogGallery postList={sortedGeekPosts} />
+        </div>
+      </div>
+
+      <div>
+        <div class="mb-8 flex items-center justify-between">
+          <h2 class="text-2xl font-bold">
+            <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">
+              交易日记
+            </span>
+          </h2>
+          <a 
+            href="/posts/trade/" 
+            class="group relative mt-4 rounded-md bg-slate-700/70 px-6 py-2.5 text-base font-medium text-white shadow-lg transition-all hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-500/50"
+          >
+            查看更多
+            <span class="absolute -right-1 top-1/2 ml-2 -translate-y-1/2 transform opacity-0 transition-all group-hover:right-2 group-hover:opacity-100">→</span>
+          </a>
+        </div>
+        <div class="rounded-lg bg-slate-800/50 p-8">
+          <BlogGallery postList={sortedTradePosts} />
+        </div>
+      </div>
+    </div>
+  </Section>
+</Base> 

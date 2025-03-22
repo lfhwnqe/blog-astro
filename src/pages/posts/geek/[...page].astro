@@ -1,0 +1,72 @@
+---
+import type {
+  FrontmatterPage,
+  IFrontmatter,
+} from 'astro-boilerplate-components';
+import {
+  BlogGallery,
+  PaginationHeader,
+  Section,
+  NewerOlderPagination,
+} from 'astro-boilerplate-components';
+
+import { CTA } from '@/partials/CTA';
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+import { sortByDate } from '@/utils/Posts';
+
+type GetStaticPaths = {
+  paginate: any;
+}; // Overrides `GetStaticPathsOptions` types from Astro
+
+export async function getStaticPaths({ paginate }: GetStaticPaths) {
+  const geekPosts = await Astro.glob<IFrontmatter>('./**/*.md');
+  const sortedPosts = sortByDate(geekPosts);
+
+  // 返回分页路径，第一页由index.astro处理，从第二页开始
+  return paginate(sortedPosts, { 
+    pageSize: 6,
+    startPage: 2 // 重要：确保该文件只处理从第2页开始的请求
+  });
+}
+
+interface Props {
+  page: FrontmatterPage;
+}
+
+const { page } = Astro.props as Props;
+
+// 修正分页URL格式，确保与路由定义匹配
+const fixedPage = {
+  ...page,
+  url: {
+    ...page.url,
+    prev: page.currentPage === 2 ? '/posts/geek/' : `/posts/geek/${page.currentPage - 1}/`,
+    next: page.currentPage < page.lastPage ? `/posts/geek/${page.currentPage + 1}/` : undefined,
+    current: `/posts/geek/${page.currentPage}/`
+  }
+};
+
+const titleSuffix = ` - ${AppConfig.site_name}`;
+const titleBase = `技术文章 - 第${page.currentPage}页`;
+const title = titleBase + titleSuffix;
+const description = '技术文章列表页面';
+---
+
+<Base head={{ title, description }}>
+  <Section>
+    <PaginationHeader title='技术文章' description='分享技术知识与经验' />
+  </Section>
+
+  <Section>
+    <div class="rounded-lg bg-slate-800/50 p-8">
+      <BlogGallery postList={page.data} />
+      
+      <div class="mt-12">
+        <NewerOlderPagination page={fixedPage} />
+      </div>
+    </div>
+  </Section>
+
+  <CTA />
+</Base> 

@@ -20,11 +20,13 @@ type GetStaticPaths = {
 }; // Overrides `GetStaticPathsOptions` types from Astro
 
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
-  const allPosts = await Astro.glob<IFrontmatter>('./**/*.md');
-  const sortedPosts = sortByDate(allPosts);
+  const geekPosts = await Astro.glob<IFrontmatter>('./geek/**/*.md');
+  const tradePosts = await Astro.glob<IFrontmatter>('./trade/**/*.md');
+  const sortedGeekPosts = sortByDate(geekPosts);
+  const sortedTradePosts = sortByDate(tradePosts);
 
   // Return a paginated collection of paths for all posts
-  return paginate(sortedPosts, { pageSize: 6 });
+  return paginate([...sortedGeekPosts, ...sortedTradePosts], { pageSize: 12 });
 }
 
 interface Props {
@@ -35,20 +37,39 @@ const { page } = Astro.props as Props;
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blog page ${page.currentPage}`;
 const title = titleBase + titleSuffix;
-const description =
-  'Pagination example built with Astro styled with Tailwind CSS.';
+const description = '博客文章列表页面';
+
+// 将文章分为两类
+const geekPosts = page.data.filter((post) => post.url?.includes('/geek/'));
+const tradePosts = page.data.filter((post) => post.url?.includes('/trade/'));
 ---
 
 <Base head={{ title, description }}>
   <Section>
-    <PaginationHeader
-      title='Random title here'
-      description='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    />
+    <PaginationHeader title='博客文章' description='技术日记与交易日记' />
   </Section>
 
   <Section>
-    <BlogGallery postList={page.data} />
+    <div class='grid grid-cols-1 gap-8 md:grid-cols-2'>
+      <div>
+        <h2 class='mb-6 text-2xl font-bold'>
+          <span
+            class='bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent'
+            >技术日记
+          </span>
+        </h2>
+        <BlogGallery postList={geekPosts} />
+      </div>
+      <div>
+        <h2 class='mb-6 text-2xl font-bold'>
+          <span
+            class='bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent'
+            >交易日记
+          </span>
+        </h2>
+        <BlogGallery postList={tradePosts} />
+      </div>
+    </div>
   </Section>
 
   <Section>

@@ -1,0 +1,65 @@
+---
+import type {
+  IFrontmatter,
+} from 'astro-boilerplate-components';
+import {
+  BlogGallery,
+  PaginationHeader,
+  Section,
+  NewerOlderPagination,
+} from 'astro-boilerplate-components';
+
+import { CTA } from '@/partials/CTA';
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+import { sortByDate } from '@/utils/Posts';
+
+// 递归查找当前目录及子目录中的所有markdown文件
+const geekPosts = await Astro.glob<IFrontmatter>('./**/*.md');
+const sortedPosts = sortByDate(geekPosts);
+
+// 分页设置
+const pageSize = 6;
+const totalPosts = sortedPosts.length;
+const totalPages = Math.ceil(totalPosts / pageSize);
+const currentPosts = sortedPosts.slice(0, pageSize);
+
+// 创建模拟分页对象，与Astro分页组件兼容
+const page = {
+  data: currentPosts,
+  start: 0,
+  end: Math.min(pageSize - 1, totalPosts - 1),
+  size: pageSize,
+  total: totalPosts,
+  currentPage: 1,
+  lastPage: totalPages,
+  url: {
+    current: '/posts/geek/',
+    prev: undefined,
+    next: totalPages > 1 ? '/posts/geek/2/' : undefined
+  }
+};
+
+const title = `技术文章 - ${AppConfig.site_name}`;
+const description = '分享技术知识与经验';
+---
+
+<Base head={{ title, description }}>
+  <Section>
+    <PaginationHeader title='技术文章' description='分享技术知识与经验' />
+  </Section>
+
+  <Section>
+    <div class="rounded-lg bg-slate-800/50 p-8">
+      <BlogGallery postList={currentPosts} />
+      
+      {totalPages > 1 && (
+        <div class="mt-12">
+          <NewerOlderPagination page={page} />
+        </div>
+      )}
+    </div>
+  </Section>
+
+  <CTA />
+</Base> 
