@@ -1,6 +1,6 @@
 ---
 layout: "@/templates/BasePost.astro"
-title: 2025-4-5 历史数据复盘
+title: 2025-4-5 sol数据复盘
 description: sol数据复盘
 pubDate: 2025-04-05T21:00:00Z
 imgSrc: "https://d1txd7788i3w4j.cloudfront.net/images/84c84428-50f1-7025-b778-548a97e9da87/2025-04-05/1743856578346-sol-15m.jpg"
