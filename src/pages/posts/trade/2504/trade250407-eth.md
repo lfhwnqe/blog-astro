@@ -137,5 +137,5 @@ imgAlt: "Image post 4"
 
 #### 数据复盘
 
-![结构分析](https://d1txd7788i3w4j.cloudfront.net/images/84c84428-50f1-7025-b778-548a97e9da87/2025-03-31/1743431257713-tradingview15m-n.jpg)
+![结构分析](https://d1txd7788i3w4j.cloudfront.net/images/84c84428-50f1-7025-b778-548a97e9da87/2025-04-07/1744032965623-eth-15m-n.jpg)
 价突破 1535 阻力后回调，回调完成后继续下跌了一波。价格回调时是一个好的跟空机会
