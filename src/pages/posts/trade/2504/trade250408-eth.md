@@ -1,7 +1,7 @@
 ---
 layout: "@/templates/BasePost.astro"
 title: 2025-4-8 eth行情分析
-description: 等待阻力点测试
+description: 高成交量能信号
 pubDate: 2025-04-08T07:00:00Z
 imgSrc: "https://d1txd7788i3w4j.cloudfront.net/images/84c84428-50f1-7025-b778-548a97e9da87/2025-04-07/1744068385196-eth-15m.jpg"
 imgAlt: "Image post 4"
@@ -134,3 +134,13 @@ imgAlt: "Image post 4"
           - 止损价格：上方第一阻力点
       - 趋势健康度判断
         - 3 条 k 线收线以证明趋势的力度
+
+
+#### 交易记录
+
+今日交易记录
+
+#### 数据复盘
+
+![结构分析](https://d1txd7788i3w4j.cloudfront.net/images/84c84428-50f1-7025-b778-548a97e9da87/2025-04-08/1744119493768-eth-15m-n.jpg)
+虽然按照分析的价格移动了，但是花费的时间太久了。没有明显的动能。不适合入场
