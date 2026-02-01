@@ -1,3 +1,12 @@
+---
+layout: "@/templates/BasePost.astro"
+title: 日内交易系统
+description: 日内交易系统
+pubDate: 2026-02-01T20:48:00Z
+imgSrc: "https://d28giuuiw4ud1x.cloudfront.net/images/d9ca45fc-10b1-704f-c3f1-f0a523bcfc7b/2026-02-01/1769950189312-image.png"
+imgAlt: "Image post 4"
+---
+
 # 日内交易模式（4h / 1h / 15min）
 
 ## 目录
