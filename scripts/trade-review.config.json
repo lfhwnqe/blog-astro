@@ -1,7 +1,7 @@
 {
   "remote": "https://github.com/lfhwnqe/blog-astro.git",
-  "productionBranch": null,
-  "productionVerified": false,
-  "siteUrl": null,
+  "productionBranch": "main",
+  "productionVerified": true,
+  "siteUrl": "https://blog.maomaocong.com/",
   "imageHosts": ["d28giuuiw4ud1x.cloudfront.net"]
 }

@@ -37,7 +37,7 @@ node /Volumes/macmini-disk/codes/blog-astro/scripts/trade-review.mjs \
 
 发布使用全新临时 clone，不暂存、重置、清理或推送原博客工作区，不携带用户未提交改动或本地领先提交。拒绝强推，远端并发更新时普通 push 失败，重新调用即可。新增的发布基础代码需要先按明确文件名单单独提交并集成；每次发布只产生文章提交。
 
-首次上线需核实 Netlify 生产分支和站点，写入配置、运行测试与完整构建，再提交发布入口。本笔还需要真实上传完成凭证。推送后检查 Netlify 对应 commit 构建结果，以及文章 URL、交易列表和图片。
+2026-09-17 已从登录后的 Netlify 项目 `beautiful-strudel-62663b` 核实：绑定 `lfhwnqe/blog-astro`，生产分支为 `main`，正式站点为 `https://blog.maomaocong.com/`。第一篇复盘对应 `fe1fcde`，生产部署状态为 Published（当日 22:23）。这些值已写入发布配置，后续无需每篇重复询问。每篇仍须提供真实上传完成凭证；推送后检查 Netlify 对应 commit 构建结果，以及文章 URL、交易列表和图片。
 
 ```sh
 node --test tests/trade-review.test.mjs
