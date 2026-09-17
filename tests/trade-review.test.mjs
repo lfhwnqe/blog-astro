@@ -57,7 +57,13 @@ const articleFor = (
 
 test('maps real blog fields, strips local evidence and private metadata, preserves cancelled outcome', () => {
   const article = articleFor();
-  assert.match(article.markdown, /pubDate: "2026-09-17T00:00:00\+08:00"/);
+  const date = new Date(/pubDate: "([^"]+)"/.exec(article.markdown)[1]);
+  for (const timeZone of ['UTC', 'Asia/Shanghai']) {
+    assert.equal(
+      new Intl.DateTimeFormat('en-CA', { timeZone }).format(date),
+      '2026-09-17'
+    );
+  }
   assert.match(article.markdown, /取消机会/);
   assert.match(article.markdown, /未提供成交与盈亏证明/);
   assert.doesNotMatch(

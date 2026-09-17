@@ -171,7 +171,8 @@ export function convert(reviewId, source, sources, config, receipt) {
     layout: '@/templates/BasePost.astro',
     title: data.title,
     description: data.summary,
-    pubDate: `${data.date}T00:00:00+08:00`,
+    // Date-only editorial metadata must retain its day in Netlify's UTC build.
+    pubDate: `${data.date}T00:00:00Z`,
     imgSrc: images[0].url,
     imgAlt: images[0].alt,
     tags: [...new Set([...data.tags, '交易复盘'])],

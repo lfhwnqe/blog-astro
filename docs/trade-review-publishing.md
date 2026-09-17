@@ -25,7 +25,7 @@ node /Volumes/macmini-disk/codes/blog-astro/scripts/trade-review.mjs \
 
 ## 文章转换
 
-`title → title`、`summary → description`、`date → pubDate`（北京时间零点）、首图 → `imgSrc/imgAlt`；使用 `@/templates/BasePost.astro`。标签保留并添加“交易复盘”。正文原意保持，取消机会不转写为成交或盈利案例。
+`title → title`、`summary → description`、`date → pubDate`（UTC 零点，保留日期字段在 Netlify UTC 构建和北京时间本地构建中的日历日；不代表实际交易时刻）、首图 → `imgSrc/imgAlt`；使用 `@/templates/BasePost.astro`。标签保留并添加“交易复盘”。正文原意保持，取消机会不转写为成交或盈利案例。
 
 规范 review-id（例如 `2026-09-17-SOLUSDC.P-01`）固定映射到 `src/pages/posts/trade/reviews/2026-09-17-solusdc.p-01.md`，修改标题或内容仍更新同一篇。现有文章没有对应 reviewId 时拒绝覆盖。
 
